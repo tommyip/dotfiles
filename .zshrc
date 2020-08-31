@@ -45,7 +45,6 @@ HYPHEN_INSENSITIVE="true"
 
 # Spaceship config
 SPACESHIP_PROMPT_ADD_NEWLINE=false
-SPACESHIP_TIME_SHOW=true
 SPACESHIP_GIT_STATUS_SHOW=false
 SPACESHIP_CHAR_PREFIX=$'\n'
 SPACESHIP_CHAR_SUFFIX=' '
@@ -55,11 +54,6 @@ SPACESHIP_PROMPT_ORDER=(
     venv
     ruby
     char
-)
-SPACESHIP_RPROMPT_ORDER=(
-    battery
-    exec_time
-    time
 )
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)

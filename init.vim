@@ -1,5 +1,6 @@
 call plug#begin('~/.local/share/nvim/plugged')
 Plug 'easymotion/vim-easymotion'
+Plug 'chaoren/vim-wordmotion'
 if !exists('g:vscode')
     Plug 'joshdick/onedark.vim'
     Plug 'itchyny/lightline.vim'
@@ -29,6 +30,18 @@ map <leader>w <Plug>(easymotion-bd-w)
 map <leader>f <Plug>(easymotion-bd-f)
 map <leader>l <Plug>(easymotion-bd-jk)
 
+" Wordmotion
+let g:wordmotion_spaces = '_-.'
+" Use the default WORD definition
+let g:wordmotion_mappings = {
+    \ 'W': '',
+    \ 'B': '',
+    \ 'E': '',
+    \ 'gE': '',
+    \ 'aW': '',
+    \ 'iW': ''
+\ }
+
 if !exists('g:vscode')
     set termguicolors
     colorscheme onedark
@@ -48,13 +61,13 @@ if !exists('g:vscode')
     nnoremap = <C-w>+
     nnoremap 0 <C-w>-
 
-    nnoremap <M-h> <C-w><C-h>
-    nnoremap <M-j> <C-w><C-j>
-    nnoremap <M-k> <C-w><C-k>
-    nnoremap <M-l> <C-w><C-l>
+    nnoremap <C-w>h <C-w><C-h>
+    nnoremap <C-w>j <C-w><C-j>
+    nnoremap <C-w>k <C-w><C-k>
+    nnoremap <C-w>l <C-w><C-l>
 
-    nnoremap K dd2kp
-    nnoremap J ddp
+    nnoremap <M-k> dd2kp
+    nnoremap <M-j> ddp
 
     nnoremap <Tab> :bnext<cr>
     nnoremap <S-Tab> :bprevious<cr>
