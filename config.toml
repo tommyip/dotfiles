@@ -1,0 +1,27 @@
+theme = "onelight"
+
+[editor]
+line-number = "relative"
+bufferline = "multiple"
+shell = ["fish", "-c"]
+scrolloff = 1000
+
+[editor.statusline]
+right = ["version-control", "diagnostics", "selections", "position", "file-encoding", "file-line-ending", "file-type"]
+
+[editor.indent-guides]
+render = true
+
+[editor.file-picker]
+hidden = false
+
+[keys.normal]
+H = "jump_view_left"
+J = "jump_view_down"
+K = "jump_view_up"
+L = "jump_view_right"
+C-q = ":buffer-close"
+C-Q = "wclose"
+C-r = ":reflow"
+"A-r" = ":reload"
+

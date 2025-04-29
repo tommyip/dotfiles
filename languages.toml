@@ -1,0 +1,54 @@
+use-grammars = { except = [ "gemini" ] }
+
+[language-server.rust-analyzer]
+command = "/Users/thomas/.rustup/toolchains/stable-aarch64-apple-darwin/bin/rust-analyzer"
+
+[[language]]
+name = "rust"
+language-servers = [{ name = "rust-analyzer" }]
+
+[language-server.uiua-lsp]
+command = "uiua"
+args = ["lsp"]
+
+[[language]]
+name = "uiua"
+scope = "source.uiua"
+injection-regex = "uiua"
+file-types = ["ua"]
+roots = []
+auto-format = true
+comment-token = "#"
+language-servers = [ "uiua-lsp" ]
+indent = { tab-width = 2, unit = "  " }
+shebangs = ["uiua"]
+
+[[grammar]]
+name = "uiua"
+source.git = "https://github.com/shnarazk/tree-sitter-uiua"
+source.rev = "main"
+
+[[language]]
+name = "cpp"
+file-types = ["cpp", "hpp", "h", "mm"]
+indent = { tab-width = 4, unit = "    " }
+
+[[language]]
+name = "python"
+auto-format = true
+language-servers = ["pyright"]
+indent = { tab-width = 4, unit = "    " }
+formatter = { command = "sh", args = ["-c", "isort - | ruff format --quiet -"] }
+# diagnostic-severity = "Hint"
+
+[language-server.pyright]
+command = "pyright-langserver"
+args = ["--stdio", "--verbose"]
+
+[[language]]
+name = "markdown"
+soft-wrap.enable = true
+
+[[language]]
+name = "typst"
+soft-wrap.enable = true
