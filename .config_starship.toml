@@ -1,0 +1,5 @@
+[character]
+success_symbol = "[ 🚀](green)"
+
+[jobs]
+disabled = true
