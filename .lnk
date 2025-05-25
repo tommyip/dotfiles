@@ -1,3 +1,4 @@
 .config/fish/config.fish
+.config/helix/languages.toml
 .config/kitty/kitty.conf
 .config/starship.toml

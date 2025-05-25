@@ -1,0 +1,29 @@
+[language-server.rust-analyzer]
+command = "/Users/thomas/.rustup/toolchains/stable-aarch64-apple-darwin/bin/rust-analyzer"
+
+[[language]]
+name = "rust"
+language-servers = [{ name = "rust-analyzer" }]
+
+[[language]]
+name = "python"
+auto-format = true
+language-servers = ["pyright", "ruff"]
+indent = { tab-width = 4, unit = "    " }
+formatter = { command = "sh", args = ["-c", "uv tool run ruff check --fix - | uv tool run ruff format -"] }
+
+[language-server.pyright]
+command = "uv"
+args = ["run", "pyright-langserver", "--stdio"]
+
+[language-server.ruff]
+command = "uv"
+args = ["tool", "run", "ruff", "server"]
+
+[[language]]
+name = "markdown"
+soft-wrap.enable = true
+
+[[language]]
+name = "typst"
+soft-wrap.enable = true
